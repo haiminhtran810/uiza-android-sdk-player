@@ -77,5 +77,6 @@ dependencies {
     testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.7.4'
     testImplementation 'org.powermock:powermock-module-junit4-rule:1.7.4'
     testImplementation 'org.powermock:powermock-module-junit4:1.7.4'
+    testImplementation "org.robolectric:robolectric:4.2.1"
 }
 
