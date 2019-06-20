@@ -2896,6 +2896,7 @@ public class UZVideo extends RelativeLayout
                 @Override
                 public void onPlay() {
                     if (videoAdPlayerCallback != null) videoAdPlayerCallback.onPlay();
+                    updateTvDuration();
                 }
 
                 @Override
@@ -2921,11 +2922,13 @@ public class UZVideo extends RelativeLayout
                 @Override
                 public void onEnded() {
                     if (videoAdPlayerCallback != null) videoAdPlayerCallback.onEnded();
+                    updateTvDuration();
                 }
 
                 @Override
                 public void onError() {
                     if (videoAdPlayerCallback != null) videoAdPlayerCallback.onError();
+                    updateTvDuration();
                 }
 
                 @Override
