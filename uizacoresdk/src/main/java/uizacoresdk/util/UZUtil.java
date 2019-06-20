@@ -220,13 +220,13 @@ public class UZUtil {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 window.setFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE, WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE);
                 window.addFlags(WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-                window.getDecorView().setSystemUiVisibility(
+                /*window.getDecorView().setSystemUiVisibility(
                         View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
                                 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
                                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                                 | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
-                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+                                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);*/
             } else {
                 //TODO cần làm ở sdk thấp, thanh navigation ko chịu ẩn
             }
