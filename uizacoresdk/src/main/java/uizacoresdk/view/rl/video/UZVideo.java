@@ -668,11 +668,11 @@ public class UZVideo extends RelativeLayout
     }
 
     public void onResume() {
+        SensorOrientationChangeNotifier.getInstance(getContext()).addListener(this);
         if (isCastingChromecast) {
             return;
         }
         activityIsPausing = false;
-        SensorOrientationChangeNotifier.getInstance(getContext()).addListener(this);
         if (uzPlayerManager != null) {
             if (ibPlayIcon == null || ibPlayIcon.getVisibility() != VISIBLE) {
                 uzPlayerManager.resumeVideo();
