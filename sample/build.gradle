@@ -1,4 +1,12 @@
 apply plugin: 'com.android.application'
+apply plugin: 'checkstyle'
+apply plugin: 'com.android.application'
+apply plugin: 'com.chaitanyapramod.findbugs-android'
+
+
+preBuild.dependsOn('checkstyle')
+assemble.dependsOn('lint')
+check.dependsOn('checkstyle')
 
 android {
     signingConfigs {
@@ -46,6 +54,20 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    findbugs {
+        toolVersion '3.0.1'
+        ignoreFailures true
+        effort 'max'
+        reportLevel 'high'
+        excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml")
+    }
+    tasks.withType(FindBugs) {
+        reports {
+            xml.enabled false
+            html.enabled true
+        }
     }
 }
 
